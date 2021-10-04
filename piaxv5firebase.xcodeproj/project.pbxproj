@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0517229C15ED3B6990A8E4D2 /* Pods_piaxv5firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A9ECF1E12F6E2F80E46C901 /* Pods_piaxv5firebase.framework */; };
 		ABD3F2ED270AE3CF0056DFDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3F2EC270AE3CF0056DFDF /* AppDelegate.swift */; };
 		ABD3F2EF270AE3CF0056DFDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3F2EE270AE3CF0056DFDF /* SceneDelegate.swift */; };
 		ABD3F2F1270AE3CF0056DFDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3F2F0270AE3CF0056DFDF /* ViewController.swift */; };
@@ -15,9 +16,13 @@
 		ABD3F2F9270AE3D00056DFDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD3F2F7270AE3D00056DFDF /* LaunchScreen.storyboard */; };
 		ABD3F301270AE9540056DFDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABD3F300270AE9540056DFDF /* GoogleService-Info.plist */; };
 		ABD3F303270AFAC60056DFDF /* RadenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3F302270AFAC60056DFDF /* RadenTableViewCell.swift */; };
+		ABD3F305270B12AB0056DFDF /* MoreinfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3F304270B12AB0056DFDF /* MoreinfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2661F489640A26D57D1923B7 /* Pods-piaxv5firebase.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piaxv5firebase.debug.xcconfig"; path = "Target Support Files/Pods-piaxv5firebase/Pods-piaxv5firebase.debug.xcconfig"; sourceTree = "<group>"; };
+		2A9ECF1E12F6E2F80E46C901 /* Pods_piaxv5firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_piaxv5firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		35E1500EE2E3057857EAF05B /* Pods-piaxv5firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piaxv5firebase.release.xcconfig"; path = "Target Support Files/Pods-piaxv5firebase/Pods-piaxv5firebase.release.xcconfig"; sourceTree = "<group>"; };
 		ABD3F2E9270AE3CF0056DFDF /* piaxv5firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = piaxv5firebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD3F2EC270AE3CF0056DFDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABD3F2EE270AE3CF0056DFDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -28,6 +33,7 @@
 		ABD3F2FA270AE3D00056DFDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ABD3F300270AE9540056DFDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		ABD3F302270AFAC60056DFDF /* RadenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadenTableViewCell.swift; sourceTree = "<group>"; };
+		ABD3F304270B12AB0056DFDF /* MoreinfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreinfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,17 +41,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0517229C15ED3B6990A8E4D2 /* Pods_piaxv5firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		24AFD7A12EDB722663AFC3B1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2661F489640A26D57D1923B7 /* Pods-piaxv5firebase.debug.xcconfig */,
+				35E1500EE2E3057857EAF05B /* Pods-piaxv5firebase.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		ABD3F2E0270AE3CF0056DFDF = {
 			isa = PBXGroup;
 			children = (
 				ABD3F2EB270AE3CF0056DFDF /* piaxv5firebase */,
 				ABD3F2EA270AE3CF0056DFDF /* Products */,
+				24AFD7A12EDB722663AFC3B1 /* Pods */,
+				B13CEF5C42349A3E3D5C1211 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -65,12 +83,21 @@
 				ABD3F2EE270AE3CF0056DFDF /* SceneDelegate.swift */,
 				ABD3F2F0270AE3CF0056DFDF /* ViewController.swift */,
 				ABD3F2F2270AE3CF0056DFDF /* Main.storyboard */,
+				ABD3F304270B12AB0056DFDF /* MoreinfoViewController.swift */,
 				ABD3F302270AFAC60056DFDF /* RadenTableViewCell.swift */,
 				ABD3F2F5270AE3D00056DFDF /* Assets.xcassets */,
 				ABD3F2F7270AE3D00056DFDF /* LaunchScreen.storyboard */,
 				ABD3F2FA270AE3D00056DFDF /* Info.plist */,
 			);
 			path = piaxv5firebase;
+			sourceTree = "<group>";
+		};
+		B13CEF5C42349A3E3D5C1211 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2A9ECF1E12F6E2F80E46C901 /* Pods_piaxv5firebase.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,9 +107,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = ABD3F2FD270AE3D00056DFDF /* Build configuration list for PBXNativeTarget "piaxv5firebase" */;
 			buildPhases = (
+				7491CC71EF6991D19CE1881A /* [CP] Check Pods Manifest.lock */,
 				ABD3F2E5270AE3CF0056DFDF /* Sources */,
 				ABD3F2E6270AE3CF0056DFDF /* Frameworks */,
 				ABD3F2E7270AE3CF0056DFDF /* Resources */,
+				6896CE5AD59FFC2FF3924953 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +169,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		6896CE5AD59FFC2FF3924953 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-piaxv5firebase/Pods-piaxv5firebase-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-piaxv5firebase/Pods-piaxv5firebase-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-piaxv5firebase/Pods-piaxv5firebase-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7491CC71EF6991D19CE1881A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-piaxv5firebase-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		ABD3F2E5270AE3CF0056DFDF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -148,6 +219,7 @@
 				ABD3F303270AFAC60056DFDF /* RadenTableViewCell.swift in Sources */,
 				ABD3F2F1270AE3CF0056DFDF /* ViewController.swift in Sources */,
 				ABD3F2ED270AE3CF0056DFDF /* AppDelegate.swift in Sources */,
+				ABD3F305270B12AB0056DFDF /* MoreinfoViewController.swift in Sources */,
 				ABD3F2EF270AE3CF0056DFDF /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +364,7 @@
 		};
 		ABD3F2FE270AE3D00056DFDF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2661F489640A26D57D1923B7 /* Pods-piaxv5firebase.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -320,6 +393,7 @@
 		};
 		ABD3F2FF270AE3D00056DFDF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35E1500EE2E3057857EAF05B /* Pods-piaxv5firebase.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

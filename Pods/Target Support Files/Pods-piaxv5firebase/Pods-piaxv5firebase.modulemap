@@ -1,0 +1,6 @@
+framework module Pods_piaxv5firebase {
+  umbrella header "Pods-piaxv5firebase-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -9,22 +9,27 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    
+    var fruits = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        fruits.append("Banan")
+        fruits.append("Apelsin")
+        fruits.append("Kiwi")
+        
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return fruits.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "raden") as! RadenTableViewCell
         
-        cell.radLabel.text = "Tjena " + String(indexPath.row)
+        cell.radLabel.text = fruits[indexPath.row]
         
         
         
@@ -35,8 +40,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         print("Klickat på en rad " + String(indexPath.row))
         
-        performSegue(withIdentifier: "moreinfo", sender: nil)
+        performSegue(withIdentifier: "moreinfo", sender: fruits[indexPath.row])
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let dest = segue.destination as! MoreinfoViewController
+        
+        dest.infotext = sender as! String
     }
 
 }
