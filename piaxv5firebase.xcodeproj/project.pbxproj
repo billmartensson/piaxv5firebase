@@ -13,6 +13,8 @@
 		ABD3F2F4270AE3CF0056DFDF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD3F2F2270AE3CF0056DFDF /* Main.storyboard */; };
 		ABD3F2F6270AE3D00056DFDF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABD3F2F5270AE3D00056DFDF /* Assets.xcassets */; };
 		ABD3F2F9270AE3D00056DFDF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABD3F2F7270AE3D00056DFDF /* LaunchScreen.storyboard */; };
+		ABD3F301270AE9540056DFDF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ABD3F300270AE9540056DFDF /* GoogleService-Info.plist */; };
+		ABD3F303270AFAC60056DFDF /* RadenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3F302270AFAC60056DFDF /* RadenTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		ABD3F2F5270AE3D00056DFDF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ABD3F2F8270AE3D00056DFDF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ABD3F2FA270AE3D00056DFDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABD3F300270AE9540056DFDF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABD3F302270AFAC60056DFDF /* RadenTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadenTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,10 +60,12 @@
 		ABD3F2EB270AE3CF0056DFDF /* piaxv5firebase */ = {
 			isa = PBXGroup;
 			children = (
+				ABD3F300270AE9540056DFDF /* GoogleService-Info.plist */,
 				ABD3F2EC270AE3CF0056DFDF /* AppDelegate.swift */,
 				ABD3F2EE270AE3CF0056DFDF /* SceneDelegate.swift */,
 				ABD3F2F0270AE3CF0056DFDF /* ViewController.swift */,
 				ABD3F2F2270AE3CF0056DFDF /* Main.storyboard */,
+				ABD3F302270AFAC60056DFDF /* RadenTableViewCell.swift */,
 				ABD3F2F5270AE3D00056DFDF /* Assets.xcassets */,
 				ABD3F2F7270AE3D00056DFDF /* LaunchScreen.storyboard */,
 				ABD3F2FA270AE3D00056DFDF /* Info.plist */,
@@ -126,6 +132,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABD3F2F9270AE3D00056DFDF /* LaunchScreen.storyboard in Resources */,
+				ABD3F301270AE9540056DFDF /* GoogleService-Info.plist in Resources */,
 				ABD3F2F6270AE3D00056DFDF /* Assets.xcassets in Resources */,
 				ABD3F2F4270AE3CF0056DFDF /* Main.storyboard in Resources */,
 			);
@@ -138,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABD3F303270AFAC60056DFDF /* RadenTableViewCell.swift in Sources */,
 				ABD3F2F1270AE3CF0056DFDF /* ViewController.swift in Sources */,
 				ABD3F2ED270AE3CF0056DFDF /* AppDelegate.swift in Sources */,
 				ABD3F2EF270AE3CF0056DFDF /* SceneDelegate.swift in Sources */,
