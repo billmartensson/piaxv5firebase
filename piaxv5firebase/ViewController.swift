@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
     
+    var ref: DatabaseReference!
     
     @IBOutlet weak var addfruitTextfield: UITextField!
     
@@ -25,6 +27,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         fruits.append("Banan")
         fruits.append("Apelsin")
         fruits.append("Kiwi")
+        
+
+        ref = Database.database().reference()
+        
+        
+        self.ref.child("tjena").setValue("hepp")
         
     }
     
