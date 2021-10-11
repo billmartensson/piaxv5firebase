@@ -24,15 +24,39 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         addfruitTextfield.delegate = self
         
+        /*
         fruits.append("Banan")
         fruits.append("Apelsin")
         fruits.append("Kiwi")
-        
+        */
 
         ref = Database.database().reference()
         
-        
         self.ref.child("tjena").setValue("hepp")
+        
+        ref.child("fruits").getData(completion: { error, snapshot in
+            guard error == nil else {
+                print(error!.localizedDescription)
+                return;
+            }
+
+            //snapshot.children
+                
+            for fruktbarn in snapshot.children {
+                let fruktbarnSnap = fruktbarn as! DataSnapshot
+                
+                let fruktinfo = fruktbarnSnap.value as! [String : String]
+                
+                print(fruktinfo["fruitname"])
+                self.fruits.append(fruktinfo["fruitname"]!)
+            }
+            
+            DispatchQueue.main.async {
+                self.fruitTableview.reloadData()
+            }
+            
+            
+        })
         
     }
     
@@ -57,6 +81,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             fruits.append(addfruitTextfield.text!)
             
             fruitTableview.reloadData()
+            
+            self.ref.child("fruits").childByAutoId().child("fruitname").setValue(addfruitTextfield.text!)
             
             addfruitTextfield.text = ""
         }
