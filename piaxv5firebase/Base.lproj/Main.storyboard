@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="PPD-Oj-rft">
             <objects>
-                <viewController id="YoD-ii-cg9" sceneMemberID="viewController">
+                <viewController id="YoD-ii-cg9" customClass="LoginViewController" customModule="piaxv5firebase" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zVx-1S-UJY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,12 +19,12 @@
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-post" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cgG-Kr-m9F">
                                 <rect key="frame" x="10" y="54" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Lösenord" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRg-h4-xoX">
                                 <rect key="frame" x="10" y="98" width="394" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ceG-fi-rjG">
                                 <rect key="frame" x="20" y="152" width="120" height="50"/>
@@ -34,6 +34,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Registrera"/>
+                                <connections>
+                                    <action selector="registerUser:" destination="YoD-ii-cg9" eventType="touchUpInside" id="7iu-9T-7t5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tp2-Fq-K6h">
                                 <rect key="frame" x="274" y="152" width="120" height="50"/>
@@ -43,6 +46,9 @@
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Logga in"/>
+                                <connections>
+                                    <action selector="loginUser:" destination="YoD-ii-cg9" eventType="touchUpInside" id="Hah-3P-xm0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="uGQ-QK-Phw"/>
@@ -61,6 +67,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="obI-5o-9cS"/>
+                    <connections>
+                        <outlet property="emailTextfield" destination="cgG-Kr-m9F" id="VV3-nk-c8e"/>
+                        <outlet property="passwordTextfield" destination="vRg-h4-xoX" id="cBv-ZS-ddm"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="shv-h4-RvP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,7 +85,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" keyboardDismissMode="onDrag" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="8E1-Ua-GfH">
-                                <rect key="frame" x="0.0" y="132" width="414" height="730"/>
+                                <rect key="frame" x="0.0" y="132" width="414" height="660"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="raden" id="JS7-Oo-YQE" customClass="RadenTableViewCell" customModule="piaxv5firebase" customModuleProvider="target">
@@ -129,6 +139,18 @@
                                     <action selector="addFruit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="S2o-Ha-ySN"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KjF-QS-RHR">
+                                <rect key="frame" x="142" y="802" width="130" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="TDU-Jh-Q5u"/>
+                                    <constraint firstAttribute="height" constant="50" id="x1f-dr-RiQ"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Logga ut"/>
+                                <connections>
+                                    <action selector="logoutuser:" destination="BYZ-38-t0r" eventType="touchUpInside" id="C6H-eP-Mdd"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -137,10 +159,12 @@
                             <constraint firstItem="Slk-ty-1kq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="6cV-Js-LBJ"/>
                             <constraint firstItem="0IH-mu-dRI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="Emq-9y-qqK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0IH-mu-dRI" secondAttribute="trailing" constant="5" id="N2W-rU-ml4"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="8E1-Ua-GfH" secondAttribute="bottom" id="Q3z-RL-G3H"/>
                             <constraint firstItem="Slk-ty-1kq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="TbH-c8-ORQ"/>
                             <constraint firstItem="0IH-mu-dRI" firstAttribute="leading" secondItem="Slk-ty-1kq" secondAttribute="trailing" constant="5" id="UFH-N4-ULS"/>
+                            <constraint firstItem="KjF-QS-RHR" firstAttribute="top" secondItem="8E1-Ua-GfH" secondAttribute="bottom" constant="10" id="Vba-Qg-4zz"/>
                             <constraint firstItem="8E1-Ua-GfH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dJ3-UE-uaX"/>
+                            <constraint firstItem="KjF-QS-RHR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dS1-BN-04V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KjF-QS-RHR" secondAttribute="bottom" constant="10" id="ghb-gC-dk4"/>
                             <constraint firstItem="8E1-Ua-GfH" firstAttribute="top" secondItem="Slk-ty-1kq" secondAttribute="bottom" constant="5" id="xVo-P1-BTC"/>
                         </constraints>
                     </view>
@@ -154,7 +178,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="493" y="90"/>
+            <point key="canvasLocation" x="492.75362318840581" y="89.732142857142847"/>
         </scene>
         <!--Moreinfo View Controller-->
         <scene sceneID="s4O-mP-EWU">

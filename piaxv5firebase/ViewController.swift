@@ -31,7 +31,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         */
 
         
-        performSegue(withIdentifier: "login", sender: nil)
+        if(Auth.auth().currentUser == nil)
+        {
+            performSegue(withIdentifier: "login", sender: nil)
+        } else {
+            print("Inloggad")
+            print(Auth.auth().currentUser?.uid)
+        }
+        
         
         
         
@@ -39,7 +46,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         self.ref.child("tjena").setValue("hepp")
         
-        ref.child("fruits").getData(completion: { error, snapshot in
+        ref.child(Auth.auth().currentUser!.uid).child("fruits").getData(completion: { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return;
@@ -79,6 +86,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         letsAddStuff()
     }
     
+    
+    @IBAction func logoutuser(_ sender: Any) {
+        
+        
+        
+    }
+    
     func letsAddStuff() {
         if(addfruitTextfield.text != "")
         {
@@ -86,7 +100,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             fruitTableview.reloadData()
             
-            self.ref.child("fruits").childByAutoId().child("fruitname").setValue(addfruitTextfield.text!)
+            self.ref.child(Auth.auth().currentUser!.uid).child("fruits").childByAutoId().child("fruitname").setValue(addfruitTextfield.text!)
             
             addfruitTextfield.text = ""
             
