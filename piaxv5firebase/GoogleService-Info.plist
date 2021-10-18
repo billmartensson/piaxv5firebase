@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>636941009860-s9h2u9m1dm3rl5cabhhihum4bfqkcjjq.apps.googleusercontent.com</string>
+	<string>636941009860-a933qh10gdigf6g1dpgb4h56vkbk3fhr.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.636941009860-s9h2u9m1dm3rl5cabhhihum4bfqkcjjq</string>
+	<string>com.googleusercontent.apps.636941009860-a933qh10gdigf6g1dpgb4h56vkbk3fhr</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDLB5JO-C_Ri8xe_PjSb2KbXKK973SGr1Q</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>se.magictechnology.piaxv5firebase</string>
+	<string>se.magictechnology.piaxv5firebasekopia</string>
 	<key>PROJECT_ID</key>
 	<string>piax-acf23</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:636941009860:ios:bf127488cb5b8bdfe21a91</string>
+	<string>1:636941009860:ios:756c73a2df7ee992e21a91</string>
 	<key>DATABASE_URL</key>
 	<string>https://piax-acf23-default-rtdb.europe-west1.firebasedatabase.app</string>
 </dict>
