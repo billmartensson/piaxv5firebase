@@ -22,6 +22,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        print("NU HÄNDER viewDidLoad")
+        
         addfruitTextfield.delegate = self
         
         /*
@@ -30,6 +32,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         fruits.append("Kiwi")
         */
 
+        ref = Database.database().reference()
+        
+        
+        
+        self.ref.child("tjena").setValue("hepp")
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        print("NU HÄNDER viewDidAppear")
         
         if(Auth.auth().currentUser == nil)
         {
@@ -37,15 +49,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             print("Inloggad")
             print(Auth.auth().currentUser?.uid)
+            loadfruits()
         }
-        
-        
-        
-        
-        ref = Database.database().reference()
-        
-        self.ref.child("tjena").setValue("hepp")
-        
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        print("NU HÄNDER viewDidDisappear")
+    }
+    
+    func loadfruits() {
         ref.child(Auth.auth().currentUser!.uid).child("fruits").getData(completion: { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
@@ -53,7 +65,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
 
             //snapshot.children
-                
+            
+            self.fruits.removeAll()
+            
             for fruktbarn in snapshot.children {
                 let fruktbarnSnap = fruktbarn as! DataSnapshot
                 
@@ -71,13 +85,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         })
     }
     
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if(textField == addfruitTextfield)
         {
             letsAddStuff()
         }
-        
         
         return true
     }
@@ -89,6 +103,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBAction func logoutuser(_ sender: Any) {
         
+        do {
+            try Auth.auth().signOut()
+            performSegue(withIdentifier: "login", sender: nil)
+            
+        } catch {
+            
+        }
         
         
     }
