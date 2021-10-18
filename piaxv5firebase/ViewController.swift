@@ -30,6 +30,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         fruits.append("Kiwi")
         */
 
+        
+        performSegue(withIdentifier: "login", sender: nil)
+        
+        
+        
         ref = Database.database().reference()
         
         self.ref.child("tjena").setValue("hepp")
@@ -57,7 +62,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             
         })
-        
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -85,6 +89,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             self.ref.child("fruits").childByAutoId().child("fruitname").setValue(addfruitTextfield.text!)
             
             addfruitTextfield.text = ""
+            
         }
     }
     
@@ -118,9 +123,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let dest = segue.destination as! MoreinfoViewController
         
-        dest.infotext = sender as! String
+        if(segue.identifier == "moreinfo")
+        {
+            let dest = segue.destination as! MoreinfoViewController
+            
+            dest.infotext = sender as! String
+        }
+        
+        
     }
 
 }

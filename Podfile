@@ -8,4 +8,10 @@ target 'piaxv5firebase' do
   # Pods for piaxv5firebase
   pod 'Firebase/Analytics'
   pod 'Firebase/Database'
+  pod 'Firebase/Auth'
+  
+  
+  
+  
+  
 end
