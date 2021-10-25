@@ -14,9 +14,16 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var addfruitTextfield: UITextField!
     
+    
+    
+    @IBOutlet weak var addfruitamountTextfield: UITextField!
+    
+    
     @IBOutlet weak var fruitTableview: UITableView!
     
     var fruits = [String]()
+    var fruitamount = [String]()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +32,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         print("NU HÄNDER viewDidLoad")
         
         addfruitTextfield.delegate = self
+        addfruitamountTextfield.delegate = self
         
         /*
         fruits.append("Banan")
@@ -58,7 +66,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func loadfruits() {
-        ref.child(Auth.auth().currentUser!.uid).child("fruits").getData(completion: { error, snapshot in
+        ref.child("fruitshopping").child(Auth.auth().currentUser!.uid).child("fruits").getData(completion: { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return;
@@ -89,6 +97,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         if(textField == addfruitTextfield)
+        {
+            addfruitamountTextfield.becomeFirstResponder()
+        }
+        if(textField == addfruitamountTextfield)
         {
             letsAddStuff()
         }
@@ -121,9 +133,18 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             fruitTableview.reloadData()
             
-            self.ref.child(Auth.auth().currentUser!.uid).child("fruits").childByAutoId().child("fruitname").setValue(addfruitTextfield.text!)
+            var fruitinfo = [String : String]()
+            fruitinfo["fruitname"] = addfruitTextfield.text
+            fruitinfo["fruitamount"] = addfruitamountTextfield.text
+            
+            
+            self.ref.child("fruitshopping").child(Auth.auth().currentUser!.uid).child("fruits").childByAutoId().setValue(fruitinfo)
+
+            
+
             
             addfruitTextfield.text = ""
+            addfruitamountTextfield.text = ""
             
         }
     }

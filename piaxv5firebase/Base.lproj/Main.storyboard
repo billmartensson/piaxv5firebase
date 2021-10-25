@@ -119,10 +119,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="p2c-4z-BuR"/>
                                 </connections>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Slk-ty-1kq">
-                                <rect key="frame" x="5" y="93" width="329" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Frukt" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Slk-ty-1kq">
+                                <rect key="frame" x="5" y="93" width="264" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="vBJ-lg-rXA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Antal" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Skq-IT-a2m">
+                                <rect key="frame" x="274" y="93" width="60" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="VbN-Fy-jgj"/>
+                                    <constraint firstAttribute="width" constant="60" id="hSF-6y-n0u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done"/>
@@ -159,18 +168,21 @@
                             <constraint firstItem="Slk-ty-1kq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="5" id="6cV-Js-LBJ"/>
                             <constraint firstItem="0IH-mu-dRI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="Emq-9y-qqK"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0IH-mu-dRI" secondAttribute="trailing" constant="5" id="N2W-rU-ml4"/>
+                            <constraint firstItem="Skq-IT-a2m" firstAttribute="leading" secondItem="Slk-ty-1kq" secondAttribute="trailing" constant="5" id="ONy-vw-Kab"/>
                             <constraint firstItem="Slk-ty-1kq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="TbH-c8-ORQ"/>
-                            <constraint firstItem="0IH-mu-dRI" firstAttribute="leading" secondItem="Slk-ty-1kq" secondAttribute="trailing" constant="5" id="UFH-N4-ULS"/>
                             <constraint firstItem="KjF-QS-RHR" firstAttribute="top" secondItem="8E1-Ua-GfH" secondAttribute="bottom" constant="10" id="Vba-Qg-4zz"/>
+                            <constraint firstItem="Skq-IT-a2m" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="5" id="c0h-S2-FJS"/>
                             <constraint firstItem="8E1-Ua-GfH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="dJ3-UE-uaX"/>
                             <constraint firstItem="KjF-QS-RHR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dS1-BN-04V"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="KjF-QS-RHR" secondAttribute="bottom" constant="10" id="ghb-gC-dk4"/>
                             <constraint firstItem="8E1-Ua-GfH" firstAttribute="top" secondItem="Slk-ty-1kq" secondAttribute="bottom" constant="5" id="xVo-P1-BTC"/>
+                            <constraint firstItem="0IH-mu-dRI" firstAttribute="leading" secondItem="Skq-IT-a2m" secondAttribute="trailing" constant="5" id="ysD-gM-veS"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x3b-cR-vxV"/>
                     <connections>
                         <outlet property="addfruitTextfield" destination="Slk-ty-1kq" id="JK7-FW-UH3"/>
+                        <outlet property="addfruitamountTextfield" destination="Skq-IT-a2m" id="k3x-QZ-tji"/>
                         <outlet property="fruitTableview" destination="8E1-Ua-GfH" id="3Cq-Gd-fbZ"/>
                         <segue destination="2Ka-dY-xa1" kind="show" identifier="moreinfo" id="KVA-RR-CLO"/>
                         <segue destination="YoD-ii-cg9" kind="presentation" identifier="login" animates="NO" modalPresentationStyle="fullScreen" id="WAl-aC-7Td"/>
