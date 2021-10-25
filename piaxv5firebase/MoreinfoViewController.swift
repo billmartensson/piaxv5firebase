@@ -12,14 +12,14 @@ class MoreinfoViewController: UIViewController {
     
     @IBOutlet weak var infoLabel: UILabel!
     
-    var infotext = ""
+    var fruitinfo = Fruitshop()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
-        infoLabel.text = infotext
+        infoLabel.text = fruitinfo.fruitname
     }
     
 

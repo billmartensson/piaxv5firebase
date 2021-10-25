@@ -14,15 +14,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var addfruitTextfield: UITextField!
     
-    
-    
     @IBOutlet weak var addfruitamountTextfield: UITextField!
     
     
     @IBOutlet weak var fruitTableview: UITableView!
     
-    var fruits = [String]()
-    var fruitamount = [String]()
+    var fruits = [Fruitshop]()
     
 
     override func viewDidLoad() {
@@ -45,6 +42,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         
         self.ref.child("tjena").setValue("hepp")
+        
+        
+        
+        
+        var fancybuy = Fruitshop()
+        fancybuy.fruitname = "Papaya"
+        fancybuy.fruitamount = "7"
+        
+        var anotherthing = Fruitshop()
+        anotherthing.fruitname = "Banan"
+        anotherthing.fruitamount = "4"
+        
+        
+        
         
     }
     
@@ -82,7 +93,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 let fruktinfo = fruktbarnSnap.value as! [String : String]
                 
                 print(fruktinfo["fruitname"])
-                self.fruits.append(fruktinfo["fruitname"]!)
+                
+                var tempfruit = Fruitshop()
+                tempfruit.fruitname = fruktinfo["fruitname"]!
+                tempfruit.fruitamount = fruktinfo["fruitamount"]!
+
+                
+                self.fruits.append(tempfruit)
             }
             
             DispatchQueue.main.async {
@@ -129,16 +146,24 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func letsAddStuff() {
         if(addfruitTextfield.text != "")
         {
-            fruits.append(addfruitTextfield.text!)
+            //fruits.append(addfruitTextfield.text!)
             
-            fruitTableview.reloadData()
+            //fruitTableview.reloadData()
             
             var fruitinfo = [String : String]()
             fruitinfo["fruitname"] = addfruitTextfield.text
             fruitinfo["fruitamount"] = addfruitamountTextfield.text
             
             
-            self.ref.child("fruitshopping").child(Auth.auth().currentUser!.uid).child("fruits").childByAutoId().setValue(fruitinfo)
+            self.ref.child("fruitshopping").child(Auth.auth().currentUser!.uid).child("fruits").childByAutoId().setValue(fruitinfo) {
+                (error:Error?, ref:DatabaseReference) in
+                    if let error = error {
+                        print("Data could not be saved: \(error).")
+                    } else {
+                        print("Data saved successfully!")
+                        self.loadfruits()
+                    }
+                }
 
             
 
@@ -159,8 +184,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "raden") as! RadenTableViewCell
         
-        cell.radLabel.text = fruits[indexPath.row]
+        let currentfruit = fruits[indexPath.row]
         
+        cell.radLabel.text = currentfruit.fruitname + currentfruit.fancyamount()
         
         
         return cell
@@ -184,7 +210,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         {
             let dest = segue.destination as! MoreinfoViewController
             
-            dest.infotext = sender as! String
+            dest.fruitinfo = sender as! Fruitshop
         }
         
         
