@@ -13,7 +13,6 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     var ref: DatabaseReference!
     
     @IBOutlet weak var addfruitTextfield: UITextField!
-    
     @IBOutlet weak var addfruitamountTextfield: UITextField!
     
     
@@ -95,6 +94,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
                 print(fruktinfo["fruitname"])
                 
                 var tempfruit = Fruitshop()
+                tempfruit.fbid = fruktbarnSnap.key
                 tempfruit.fruitname = fruktinfo["fruitname"]!
                 tempfruit.fruitamount = fruktinfo["fruitamount"]!
 
@@ -170,6 +170,21 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             addfruitTextfield.text = ""
             addfruitamountTextfield.text = ""
+            
+        } else {
+            // Textfältet var tomt
+            // Create new Alert
+            var dialogMessage = UIAlertController(title: "Fel", message: "Du måste skriva namn på frukten", preferredStyle: .alert)
+
+            // Create OK button with action handler
+            let ok = UIAlertAction(title: "Jepp", style: .default, handler: { (action) -> Void in
+                print("Ok button tapped")
+            })
+
+            //Add OK button to a dialog message
+            dialogMessage.addAction(ok)
+            // Present Alert to
+            self.present(dialogMessage, animated: true, completion: nil)
             
         }
     }

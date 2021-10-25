@@ -200,16 +200,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MER INFO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8u-gl-G8k">
-                                <rect key="frame" x="57" y="122" width="217" height="153"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MER INFO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b8u-gl-G8k">
+                                <rect key="frame" x="0.0" y="93" width="414" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zgb-Jh-ODA">
+                                <rect key="frame" x="304" y="802" width="100" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="6z1-cY-z44"/>
+                                    <constraint firstAttribute="height" constant="50" id="ysy-KD-ehj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Radera"/>
+                                <connections>
+                                    <action selector="deleteFruit:" destination="2Ka-dY-xa1" eventType="touchUpInside" id="hHn-C4-qvq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="f82-3E-Sl6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="f82-3E-Sl6" firstAttribute="trailing" secondItem="zgb-Jh-ODA" secondAttribute="trailing" constant="10" id="EDe-Vf-zWb"/>
+                            <constraint firstItem="f82-3E-Sl6" firstAttribute="bottom" secondItem="zgb-Jh-ODA" secondAttribute="bottom" constant="10" id="Eot-w9-ufE"/>
+                            <constraint firstItem="b8u-gl-G8k" firstAttribute="leading" secondItem="f82-3E-Sl6" secondAttribute="leading" id="XDa-68-GIb"/>
+                            <constraint firstItem="f82-3E-Sl6" firstAttribute="trailing" secondItem="b8u-gl-G8k" secondAttribute="trailing" id="c5P-Ll-PJl"/>
+                            <constraint firstItem="b8u-gl-G8k" firstAttribute="top" secondItem="f82-3E-Sl6" secondAttribute="top" constant="5" id="cvV-zz-Nh9"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Xl1-Qh-8Ot"/>
                     <connections>
@@ -218,7 +236,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ykU-sW-Cju" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1243" y="90"/>
+            <point key="canvasLocation" x="1242.0289855072465" y="89.732142857142847"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="InK-H9-vi7">

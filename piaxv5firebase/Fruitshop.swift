@@ -8,6 +8,9 @@
 import Foundation
 
 class Fruitshop {
+    
+    var fbid = ""
+    
     var fruitname = ""
     var fruitamount = ""
     
