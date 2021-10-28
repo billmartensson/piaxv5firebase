@@ -19,9 +19,10 @@ class Fruitshop {
         if(fruitamount == "")
         {
             return ""
+        } else {
+            return " " + fruitamount + " stycken"
         }
         
-        return " " + fruitamount + " stycken"
     }
     
 }

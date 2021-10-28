@@ -12,6 +12,9 @@ class MoreinfoViewController: UIViewController {
 
     @IBOutlet weak var infoLabel: UILabel!
 
+    
+    @IBOutlet weak var amountLabel: UILabel!
+    
     var ref: DatabaseReference!
     
     var fruitinfo = Fruitshop()
@@ -24,6 +27,7 @@ class MoreinfoViewController: UIViewController {
         ref = Database.database().reference()
         
         infoLabel.text = fruitinfo.fruitname
+        amountLabel.text = fruitinfo.fancyamount()
     }
     
 

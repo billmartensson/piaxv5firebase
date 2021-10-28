@@ -19,8 +19,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var fruitTableview: UITableView!
     
     var fruits = [Fruitshop]()
-    
-
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -224,10 +223,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if(segue.identifier == "moreinfo")
         {
             let dest = segue.destination as! MoreinfoViewController
-            
+                        
             dest.fruitinfo = sender as! Fruitshop
         }
-        
         
     }
 
