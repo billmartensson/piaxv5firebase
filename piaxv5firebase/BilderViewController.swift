@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
 
 class BilderViewController: UIViewController {
 
@@ -17,6 +19,24 @@ class BilderViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        
+        let frogplace = storageRef.child("frog.jpg")
+        
+        frogplace.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+                print("OH NO ERROR")
+            } else {
+                // Data for "images/island.jpg" is returned
+                let thedownloadedimage = UIImage(data: data!)
+                
+                self.bilden.image = thedownloadedimage
+            }
+        }
     }
     
     @IBAction func letsChangeImage(_ sender: Any) {
