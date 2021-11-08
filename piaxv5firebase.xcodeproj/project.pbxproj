@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		1FD11E87FAADB4C21E649A62 /* Pods_piaxv5firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F14EDA6F3612B0DDBA458F /* Pods_piaxv5firebase.framework */; };
 		AB041EDE2726AD5F0036397F /* Fruitshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB041EDD2726AD5F0036397F /* Fruitshop.swift */; };
+		AB90BB7B273919EC000E4C20 /* BilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB90BB7A273919EC000E4C20 /* BilderViewController.swift */; };
 		ABA8CE84271D67D100B70307 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8CE83271D67D100B70307 /* LoginViewController.swift */; };
 		ABCE4AF8272A982F0050C2CD /* FruitplacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE4AF7272A982F0050C2CD /* FruitplacesViewController.swift */; };
 		ABCE4AFA272A9C390050C2CD /* PlaceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE4AF9272A9C390050C2CD /* PlaceTableViewCell.swift */; };
+		ABCE4AFD272AB5500050C2CD /* Fruitplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE4AFC272AB5500050C2CD /* Fruitplace.swift */; };
 		ABD3F2ED270AE3CF0056DFDF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3F2EC270AE3CF0056DFDF /* AppDelegate.swift */; };
 		ABD3F2EF270AE3CF0056DFDF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3F2EE270AE3CF0056DFDF /* SceneDelegate.swift */; };
 		ABD3F2F1270AE3CF0056DFDF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABD3F2F0270AE3CF0056DFDF /* ViewController.swift */; };
@@ -28,9 +30,12 @@
 		39F14EDA6F3612B0DDBA458F /* Pods_piaxv5firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_piaxv5firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9434ECD7EEC2843802FAB1F4 /* Pods-piaxv5firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piaxv5firebase.release.xcconfig"; path = "Target Support Files/Pods-piaxv5firebase/Pods-piaxv5firebase.release.xcconfig"; sourceTree = "<group>"; };
 		AB041EDD2726AD5F0036397F /* Fruitshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruitshop.swift; sourceTree = "<group>"; };
+		AB90BB7A273919EC000E4C20 /* BilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilderViewController.swift; sourceTree = "<group>"; };
 		ABA8CE83271D67D100B70307 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ABCE4AF7272A982F0050C2CD /* FruitplacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitplacesViewController.swift; sourceTree = "<group>"; };
 		ABCE4AF9272A9C390050C2CD /* PlaceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceTableViewCell.swift; sourceTree = "<group>"; };
+		ABCE4AFC272AB5500050C2CD /* Fruitplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruitplace.swift; sourceTree = "<group>"; };
+		ABCE4AFE272AC9270050C2CD /* Struktur.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = Struktur.md; sourceTree = "<group>"; };
 		ABD3F2E9270AE3CF0056DFDF /* piaxv5firebase.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = piaxv5firebase.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABD3F2EC270AE3CF0056DFDF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABD3F2EE270AE3CF0056DFDF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -108,7 +113,9 @@
 				ABD3F2EC270AE3CF0056DFDF /* AppDelegate.swift */,
 				ABD3F2EE270AE3CF0056DFDF /* SceneDelegate.swift */,
 				AB041EDD2726AD5F0036397F /* Fruitshop.swift */,
+				ABCE4AFC272AB5500050C2CD /* Fruitplace.swift */,
 				ABD3F2F2270AE3CF0056DFDF /* Main.storyboard */,
+				AB90BB7A273919EC000E4C20 /* BilderViewController.swift */,
 				ABA8CE83271D67D100B70307 /* LoginViewController.swift */,
 				ABD3F304270B12AB0056DFDF /* MoreinfoViewController.swift */,
 				ABD3F2F0270AE3CF0056DFDF /* ViewController.swift */,
@@ -116,6 +123,7 @@
 				ABD3F2F5270AE3D00056DFDF /* Assets.xcassets */,
 				ABD3F2F7270AE3D00056DFDF /* LaunchScreen.storyboard */,
 				ABD3F2FA270AE3D00056DFDF /* Info.plist */,
+				ABCE4AFE272AC9270050C2CD /* Struktur.md */,
 			);
 			path = piaxv5firebase;
 			sourceTree = "<group>";
@@ -237,11 +245,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB041EDE2726AD5F0036397F /* Fruitshop.swift in Sources */,
+				AB90BB7B273919EC000E4C20 /* BilderViewController.swift in Sources */,
 				ABA8CE84271D67D100B70307 /* LoginViewController.swift in Sources */,
 				ABCE4AFA272A9C390050C2CD /* PlaceTableViewCell.swift in Sources */,
 				ABD3F303270AFAC60056DFDF /* RadenTableViewCell.swift in Sources */,
 				ABCE4AF8272A982F0050C2CD /* FruitplacesViewController.swift in Sources */,
 				ABD3F2F1270AE3CF0056DFDF /* ViewController.swift in Sources */,
+				ABCE4AFD272AB5500050C2CD /* Fruitplace.swift in Sources */,
 				ABD3F2ED270AE3CF0056DFDF /* AppDelegate.swift in Sources */,
 				ABD3F305270B12AB0056DFDF /* MoreinfoViewController.swift in Sources */,
 				ABD3F2EF270AE3CF0056DFDF /* SceneDelegate.swift in Sources */,

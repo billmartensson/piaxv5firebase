@@ -8,13 +8,16 @@
 import UIKit
 import Firebase
 
-class FruitplacesViewController: UIViewController, UITableViewDataSource {
+class FruitplacesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     var ref: DatabaseReference!
 
     @IBOutlet weak var addplaceTextfield: UITextField!
     
     @IBOutlet weak var placesTableview: UITableView!
+    
+    var places = [Fruitplace]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +28,7 @@ class FruitplacesViewController: UIViewController, UITableViewDataSource {
         
         
         placesTableview.dataSource = self
-        
+        placesTableview.delegate = self
         
     }
 
@@ -92,7 +95,7 @@ class FruitplacesViewController: UIViewController, UITableViewDataSource {
     
     
     func loadplaces() {
-        ref.child("fruitshopping").child(Auth.auth().currentUser!.uid).child("fruits").getData(completion: { error, snapshot in
+        ref.child("fruitshopping").child(Auth.auth().currentUser!.uid).child("places").getData(completion: { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return;
@@ -100,26 +103,25 @@ class FruitplacesViewController: UIViewController, UITableViewDataSource {
 
             //snapshot.children
             
-            self.fruits.removeAll()
+            self.places.removeAll()
             
             for fruktbarn in snapshot.children {
                 let fruktbarnSnap = fruktbarn as! DataSnapshot
                 
                 let fruktinfo = fruktbarnSnap.value as! [String : String]
                 
-                print(fruktinfo["fruitname"])
+                print(fruktinfo["placename"])
                 
-                var tempfruit = Fruitshop()
-                tempfruit.fbid = fruktbarnSnap.key
-                tempfruit.fruitname = fruktinfo["fruitname"]!
-                tempfruit.fruitamount = fruktinfo["fruitamount"]!
+                var tempplace = Fruitplace()
+                tempplace.fbid = fruktbarnSnap.key
+                tempplace.placename = fruktinfo["placename"]!
 
                 
-                self.fruits.append(tempfruit)
+                self.places.append(tempplace)
             }
             
             DispatchQueue.main.async {
-                self.fruitTableview.reloadData()
+                self.placesTableview.reloadData()
             }
             
             
@@ -130,18 +132,35 @@ class FruitplacesViewController: UIViewController, UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 5
+        return places.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "placerow") as! PlaceTableViewCell
         
-        cell.placeLabel.text = "Hemma"
+        cell.placeLabel.text = places[indexPath.row].placename
         
         return cell
         
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        performSegue(withIdentifier: "fruits", sender: places[indexPath.row])
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if(segue.identifier == "fruits")
+        {
+            let dest = segue.destination as! ViewController
+            dest.currentplace = sender as! Fruitplace
+        }
+        
+    }
+    
     
     /*
     // MARK: - Navigation

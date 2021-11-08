@@ -18,6 +18,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     
     @IBOutlet weak var fruitTableview: UITableView!
     
+    var currentplace = Fruitplace()
+    
     var fruits = [Fruitshop]()
         
     override func viewDidLoad() {
@@ -75,7 +77,43 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func loadfruits() {
-        ref.child("fruitshopping").child(Auth.auth().currentUser!.uid).child("fruits").getData(completion: { error, snapshot in
+        var loadpath = ref.child("fruitshopping")
+        
+        loadpath = loadpath.child(Auth.auth().currentUser!.uid)
+        loadpath = loadpath.child("fruits")
+        
+        loadpath.queryOrdered(byChild: "fruitplace").queryEqual(toValue: currentplace.fbid).observeSingleEvent(of: .value, with: { snapshot in
+            
+            //snapshot.children
+            
+            self.fruits.removeAll()
+            
+            for fruktbarn in snapshot.children {
+                let fruktbarnSnap = fruktbarn as! DataSnapshot
+                
+                let fruktinfo = fruktbarnSnap.value as! [String : String]
+                
+                print(fruktinfo["fruitname"])
+                
+                var tempfruit = Fruitshop()
+                tempfruit.fbid = fruktbarnSnap.key
+                tempfruit.fruitname = fruktinfo["fruitname"]!
+                tempfruit.fruitamount = fruktinfo["fruitamount"]!
+
+                
+                self.fruits.append(tempfruit)
+            }
+            
+            DispatchQueue.main.async {
+                self.fruitTableview.reloadData()
+            }
+            
+          }) { error in
+            print(error.localizedDescription)
+          }
+        
+        /*
+        loadpath.queryOrdered(byChild: "fruitplace").getData(completion: { error, snapshot in
             guard error == nil else {
                 print(error!.localizedDescription)
                 return;
@@ -107,6 +145,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             
             
         })
+         */
     }
     
     
@@ -150,6 +189,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             //fruitTableview.reloadData()
             
             var fruitinfo = [String : String]()
+            fruitinfo["fruitplace"] = currentplace.fbid
             fruitinfo["fruitname"] = addfruitTextfield.text
             fruitinfo["fruitamount"] = addfruitamountTextfield.text
             
