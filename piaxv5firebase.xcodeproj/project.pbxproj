@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1FD11E87FAADB4C21E649A62 /* Pods_piaxv5firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F14EDA6F3612B0DDBA458F /* Pods_piaxv5firebase.framework */; };
 		AB041EDE2726AD5F0036397F /* Fruitshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB041EDD2726AD5F0036397F /* Fruitshop.swift */; };
+		AB7B728627395B5300205977 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AB7B728827395B5300205977 /* Localizable.strings */; };
 		AB90BB7B273919EC000E4C20 /* BilderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB90BB7A273919EC000E4C20 /* BilderViewController.swift */; };
 		ABA8CE84271D67D100B70307 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA8CE83271D67D100B70307 /* LoginViewController.swift */; };
 		ABCE4AF8272A982F0050C2CD /* FruitplacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCE4AF7272A982F0050C2CD /* FruitplacesViewController.swift */; };
@@ -30,6 +31,10 @@
 		39F14EDA6F3612B0DDBA458F /* Pods_piaxv5firebase.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_piaxv5firebase.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9434ECD7EEC2843802FAB1F4 /* Pods-piaxv5firebase.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-piaxv5firebase.release.xcconfig"; path = "Target Support Files/Pods-piaxv5firebase/Pods-piaxv5firebase.release.xcconfig"; sourceTree = "<group>"; };
 		AB041EDD2726AD5F0036397F /* Fruitshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruitshop.swift; sourceTree = "<group>"; };
+		AB7B727C273953E200205977 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Main.strings; sourceTree = "<group>"; };
+		AB7B727D273953E200205977 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		AB7B728727395B5300205977 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AB7B728927395B5B00205977 /* sv */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = sv; path = sv.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AB90BB7A273919EC000E4C20 /* BilderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BilderViewController.swift; sourceTree = "<group>"; };
 		ABA8CE83271D67D100B70307 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		ABCE4AF7272A982F0050C2CD /* FruitplacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitplacesViewController.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 				ABD3F2F2270AE3CF0056DFDF /* Main.storyboard */,
 				AB90BB7A273919EC000E4C20 /* BilderViewController.swift */,
 				ABA8CE83271D67D100B70307 /* LoginViewController.swift */,
+				AB7B728827395B5300205977 /* Localizable.strings */,
 				ABD3F304270B12AB0056DFDF /* MoreinfoViewController.swift */,
 				ABD3F2F0270AE3CF0056DFDF /* ViewController.swift */,
 				ABD3F302270AFAC60056DFDF /* RadenTableViewCell.swift */,
@@ -172,6 +178,7 @@
 			knownRegions = (
 				en,
 				Base,
+				sv,
 			);
 			mainGroup = ABD3F2E0270AE3CF0056DFDF;
 			productRefGroup = ABD3F2EA270AE3CF0056DFDF /* Products */;
@@ -188,6 +195,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AB7B728627395B5300205977 /* Localizable.strings in Resources */,
 				ABD3F2F9270AE3D00056DFDF /* LaunchScreen.storyboard in Resources */,
 				ABD3F301270AE9540056DFDF /* GoogleService-Info.plist in Resources */,
 				ABD3F2F6270AE3D00056DFDF /* Assets.xcassets in Resources */,
@@ -261,10 +269,20 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		AB7B728827395B5300205977 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AB7B728727395B5300205977 /* en */,
+				AB7B728927395B5B00205977 /* sv */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		ABD3F2F2270AE3CF0056DFDF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				ABD3F2F3270AE3CF0056DFDF /* Base */,
+				AB7B727C273953E200205977 /* sv */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -273,6 +291,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				ABD3F2F8270AE3D00056DFDF /* Base */,
+				AB7B727D273953E200205977 /* sv */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -284,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -345,6 +365,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";

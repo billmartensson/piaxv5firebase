@@ -78,10 +78,10 @@ class FruitplacesViewController: UIViewController, UITableViewDataSource, UITabl
         } else {
             // Textfältet var tomt
             // Create new Alert
-            var dialogMessage = UIAlertController(title: "Fel", message: "Du måste skriva namn på platsen", preferredStyle: .alert)
+            var dialogMessage = UIAlertController(title: NSLocalizedString("Place error", comment: "Place alert title"), message: NSLocalizedString("You need to write the place name", comment: "Place alert message"), preferredStyle: .alert)
 
             // Create OK button with action handler
-            let ok = UIAlertAction(title: "Jepp", style: .default, handler: { (action) -> Void in
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                 print("Ok button tapped")
             })
 

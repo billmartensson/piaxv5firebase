@@ -213,10 +213,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         } else {
             // Textfältet var tomt
             // Create new Alert
-            var dialogMessage = UIAlertController(title: "Fel", message: "Du måste skriva namn på frukten", preferredStyle: .alert)
+            var dialogMessage = UIAlertController(title: NSLocalizedString("Error", comment: "Empty fruit title"), message: NSLocalizedString("You must write name of fruit", comment: "Add fruit empty mesage"), preferredStyle: .alert)
 
             // Create OK button with action handler
-            let ok = UIAlertAction(title: "Jepp", style: .default, handler: { (action) -> Void in
+            let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
                 print("Ok button tapped")
             })
 

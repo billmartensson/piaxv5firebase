@@ -1,0 +1,66 @@
+
+/* Class = "UIButton"; configuration.title = "Add"; ObjectID = "0IH-mu-dRI"; */
+"0IH-mu-dRI.configuration.title" = "Lägg till";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0IH-mu-dRI"; */
+"0IH-mu-dRI.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Logout"; ObjectID = "KjF-QS-RHR"; */
+"KjF-QS-RHR.configuration.title" = "Logout";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "KjF-QS-RHR"; */
+"KjF-QS-RHR.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "LcI-3E-t73"; */
+"LcI-3E-t73.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Pay-FQ-q1O"; */
+"Pay-FQ-q1O.text" = "Label";
+
+/* Class = "UITextField"; placeholder = "Amount"; ObjectID = "Skq-IT-a2m"; */
+"Skq-IT-a2m.placeholder" = "Antal";
+
+/* Class = "UITextField"; placeholder = "Fruit"; ObjectID = "Slk-ty-1kq"; */
+"Slk-ty-1kq.placeholder" = "Frukt";
+
+/* Class = "UIButton"; configuration.title = "Add"; ObjectID = "Ylo-XB-PqD"; */
+"Ylo-XB-PqD.configuration.title" = "Lägg till";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Ylo-XB-PqD"; */
+"Ylo-XB-PqD.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Zmq-Gw-equ"; */
+"Zmq-Gw-equ.text" = "Label";
+
+/* Class = "UILabel"; text = "MER INFO"; ObjectID = "b8u-gl-G8k"; */
+"b8u-gl-G8k.text" = "MER INFO";
+
+/* Class = "UIButton"; configuration.title = "BYT BILD"; ObjectID = "bRd-JR-9kB"; */
+"bRd-JR-9kB.configuration.title" = "BYT BILD";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "bRd-JR-9kB"; */
+"bRd-JR-9kB.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Registrera"; ObjectID = "ceG-fi-rjG"; */
+"ceG-fi-rjG.configuration.title" = "Registrera";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ceG-fi-rjG"; */
+"ceG-fi-rjG.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "E-post"; ObjectID = "cgG-Kr-m9F"; */
+"cgG-Kr-m9F.placeholder" = "E-post";
+
+/* Class = "UIButton"; configuration.title = "Logga in"; ObjectID = "tp2-Fq-K6h"; */
+"tp2-Fq-K6h.configuration.title" = "Logga in";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "tp2-Fq-K6h"; */
+"tp2-Fq-K6h.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "Lösenord"; ObjectID = "vRg-h4-xoX"; */
+"vRg-h4-xoX.placeholder" = "Lösenord";
+
+/* Class = "UIButton"; configuration.title = "Delete"; ObjectID = "zgb-Jh-ODA"; */
+"zgb-Jh-ODA.configuration.title" = "Delete";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "zgb-Jh-ODA"; */
+"zgb-Jh-ODA.normalTitle" = "Button";
